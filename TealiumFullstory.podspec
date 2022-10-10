@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     s.description  = <<-DESC
     Tealium's integration with Fullstory for iOS.
     DESC
-    s.vendored_frameworks = 'FullStory.xcframework'
+    s.vendored_frameworks = 'Frameworks/FullStory.xcframework'
     s.homepage     = "https://github.com/Tealium/tealium-ios-fullstory-remote-command"
 
     # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = "11.0"    
 
     # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-    s.source       = { :git => "https://github.com/Tealium/tealium-ios-fullstory-remote-command.git", :tag => "#{s.version}" }
+    s.source       = { :git => "https://github.com/Tealium/tealium-ios-fullstory-remote-command.git", :tag => "#{s.version}", :flatten => true }
 
     # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.ios.source_files      = "Sources/**/*.{swift}"
@@ -33,7 +33,6 @@ Pod::Spec.new do |s|
     s.ios.dependency 'tealium-swift/Core', '~> 2.7'
     s.ios.dependency 'tealium-swift/RemoteCommands', '~> 2.7'
     s.ios.dependency 'tealium-swift/TagManagement', '~> 2.7'
-    s.ios.dependency 'FullstoryBridge'
 
 end
 
