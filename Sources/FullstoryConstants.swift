@@ -18,13 +18,11 @@ enum FullstoryConstants {
         static let logEvent = "logevent"
         static let identify = "identify"
         static let setUserVariables = "setuservariables"
-        static let fetchSessionUrl = "fetchsessionurl"
     }
     
     struct EventKeys {
         static let eventName = "event_name"
         static let eventProperties = "event"
-        static let eventParameters = "event_parameters"
         static let uid = "uid"
         static let userVariables = "user_variables"
     }

@@ -14,7 +14,7 @@ import FullStory
 #endif
 
 public protocol FullstoryCommand {
-    func identifyUser(id: String, data: [String: Any])
+    func identifyUser(id: String, data: [String: Any]?)
     func setUserData(data: [String: Any])
     
     func logEvent(eventName: String, eventData: [String: Any])
@@ -22,8 +22,12 @@ public protocol FullstoryCommand {
 
 public class FullstoryInstance: FullstoryCommand {
     public init() {}
-    public func identifyUser(id: String, data: [String : Any]) {
-        FS.identify(id, userVars: data)
+    public func identifyUser(id: String, data: [String : Any]?) {
+        if let userData = data {
+            FS.identify(id, userVars: userData)
+        } else {
+            FS.identify(id)
+        }
     }
     
     public func logEvent(eventName: String, eventData: [String : Any]) {

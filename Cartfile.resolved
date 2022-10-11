@@ -1,2 +1,2 @@
 binary "Fullstory.json" "1.31.0"
-github "tealium/tealium-swift" "2.7.0"
+github "tealium/tealium-swift" "2.8.0"

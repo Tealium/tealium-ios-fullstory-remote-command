@@ -15,9 +15,9 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "TealiumAirship",
+            name: "TealiumFullStory",
             dependencies: [
-                .product(name: "Chartbeat", package: "Chartbeat"),
+                .product(name: "FullStory", package: "FullStory"),
                 .product(name: "TealiumCore", package: "TealiumSwift"),
                 .product(name: "TealiumRemoteCommands", package: "TealiumSwift")
             ],
@@ -25,8 +25,8 @@ let package = Package(
             exclude: ["Support"]
         ),
         .testTarget(
-            name: "TealiumChartbeatTests",
-            dependencies: ["TealiumChartbeat"],
+            name: "TealiumFullStoryTests",
+            dependencies: ["TealiumFullStory"],
             path: "./Tests",
             exclude: ["Support"])
     ]

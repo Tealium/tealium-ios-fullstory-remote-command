@@ -1,2 +1,2 @@
-github "tealium/tealium-swift"
-binary "Fullstory.json"
+github "tealium/tealium-swift" ~> 2.7
+binary "Fullstory.json" ~> 1.31

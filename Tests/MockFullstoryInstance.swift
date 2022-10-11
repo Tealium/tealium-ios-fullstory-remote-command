@@ -12,9 +12,8 @@ class MockFullstoryInstance: FullstoryCommand {
     var identifyUserCount = 0
     var setUserDataCount = 0
     var logEventCount = 0
-    var fetchSessionUrlCount = 0
     
-    func identifyUser(id: String, data: [String : Any]) {
+    func identifyUser(id: String, data: [String : Any]?) {
         identifyUserCount += 1
     }
     

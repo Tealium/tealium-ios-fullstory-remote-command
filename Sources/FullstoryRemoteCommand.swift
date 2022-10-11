@@ -14,6 +14,11 @@ import Foundation
 #endif
 
 public class FullstoryRemoteCommand: RemoteCommand {
+    
+    override public var version: String? {
+        return FullstoryConstants.version
+    }
+    
     var fullstoryInstance: FullstoryCommand
     
     public init(fullstoryInstance: FullstoryCommand = FullstoryInstance(), type: RemoteCommandType = .webview) {
@@ -37,9 +42,10 @@ public class FullstoryRemoteCommand: RemoteCommand {
         fullstoryCommands.forEach { command in
             switch(command) {
             case FullstoryConstants.Commands.identify:
-                guard let uid = payload[FullstoryConstants.EventKeys.uid] as? String, let userData = payload[FullstoryConstants.EventKeys.userVariables] as? [String: Any] else {
+                guard let uid = payload[FullstoryConstants.EventKeys.uid] as? String else {
                     break
                 }
+                let userData = payload[FullstoryConstants.EventKeys.userVariables] as? [String: Any]
                 fullstoryInstance.identifyUser(id: uid, data: userData)
             case FullstoryConstants.Commands.setUserVariables:
                 guard let userData = payload[FullstoryConstants.EventKeys.userVariables] as? [String: Any] else {
