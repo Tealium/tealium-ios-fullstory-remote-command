@@ -21,7 +21,7 @@ class TealiumHelper {
     
     var tealium: Tealium?
     
-    let fullstoryRemoteCommand = FullstoryRemoteCommand(type: .local(file: "fullstory", bundle: Bundle.main))
+    let fullstoryRemoteCommand = FullstoryRemoteCommand(type: .local(file: "TealiumFullstory", bundle: Bundle.main))
     
     private init() {
         config.shouldUseRemotePublishSettings = false

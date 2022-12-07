@@ -14,7 +14,7 @@
 		48CA39C928EC78DB00919235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48CA39C828EC78DB00919235 /* Assets.xcassets */; };
 		48CA39CC28EC78DB00919235 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48CA39CB28EC78DB00919235 /* Preview Assets.xcassets */; };
 		48CA3A2128F458DB00919235 /* TealiumHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA3A2028F458DB00919235 /* TealiumHelper.swift */; };
-		48CA3A2428F4620600919235 /* fullstory.json in Resources */ = {isa = PBXBuildFile; fileRef = 48CA3A2328F4620600919235 /* fullstory.json */; };
+		48CA3A2428F4620600919235 /* TealiumFullstory.json in Resources */ = {isa = PBXBuildFile; fileRef = 48CA3A2328F4620600919235 /* TealiumFullstory.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 		48CA39C828EC78DB00919235 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48CA39CB28EC78DB00919235 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		48CA3A2028F458DB00919235 /* TealiumHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TealiumHelper.swift; sourceTree = "<group>"; };
-		48CA3A2328F4620600919235 /* fullstory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fullstory.json; sourceTree = "<group>"; };
+		48CA3A2328F4620600919235 /* TealiumFullstory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TealiumFullstory.json; sourceTree = "<group>"; };
 		5AE5519EDEF53F6CAB50A720 /* Pods-TealiumFullstorySample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumFullstorySample.debug.xcconfig"; path = "Target Support Files/Pods-TealiumFullstorySample/Pods-TealiumFullstorySample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +71,7 @@
 				48CA39C828EC78DB00919235 /* Assets.xcassets */,
 				48CA39CA28EC78DB00919235 /* Preview Content */,
 				48CA3A2028F458DB00919235 /* TealiumHelper.swift */,
-				48CA3A2328F4620600919235 /* fullstory.json */,
+				48CA3A2328F4620600919235 /* TealiumFullstory.json */,
 				48658067293E9D180016722E /* AppDelegate.swift */,
 			);
 			path = TealiumFullstorySample;
@@ -164,7 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48CA39CC28EC78DB00919235 /* Preview Assets.xcassets in Resources */,
-				48CA3A2428F4620600919235 /* fullstory.json in Resources */,
+				48CA3A2428F4620600919235 /* TealiumFullstory.json in Resources */,
 				48CA39C928EC78DB00919235 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
