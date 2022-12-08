@@ -56,7 +56,8 @@ public class FullstoryRemoteCommand: RemoteCommand {
                 guard let eventName = payload[FullstoryConstants.EventKeys.eventName] as? String else {
                     break
                 }
-                fullstoryInstance.logEvent(eventName: eventName, eventData: payload)
+                let eventData: [String: Any] = payload[FullstoryConstants.EventKeys.eventProperties] as? [String: Any] ?? [:]
+                fullstoryInstance.logEvent(eventName: eventName, eventData: eventData)
             default:
                 break
             }
