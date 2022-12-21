@@ -37,7 +37,6 @@
 		48CA39FC28EC831400919235 /* TealiumCollect.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48CA39E428EC831300919235 /* TealiumCollect.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		48CA3A0428EDC82500919235 /* MockFullstoryInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA39FE28EDC7D800919235 /* MockFullstoryInstance.swift */; };
 		48CA3A0528EDC82800919235 /* FullstoryRemoteCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA3A0028EDC7E500919235 /* FullstoryRemoteCommandTests.swift */; };
-		48CA3A0628EDC82B00919235 /* HttpTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA3A0228EDC7F200919235 /* HttpTestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +94,6 @@
 		48CA39E428EC831300919235 /* TealiumCollect.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumCollect.xcframework; path = Carthage/Build/TealiumCollect.xcframework; sourceTree = "<group>"; };
 		48CA39FE28EDC7D800919235 /* MockFullstoryInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFullstoryInstance.swift; sourceTree = "<group>"; };
 		48CA3A0028EDC7E500919235 /* FullstoryRemoteCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullstoryRemoteCommandTests.swift; sourceTree = "<group>"; };
-		48CA3A0228EDC7F200919235 /* HttpTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpTestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +161,6 @@
 			children = (
 				48CA39FE28EDC7D800919235 /* MockFullstoryInstance.swift */,
 				48CA3A0028EDC7E500919235 /* FullstoryRemoteCommandTests.swift */,
-				48CA3A0228EDC7F200919235 /* HttpTestHelpers.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -307,7 +304,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48CA3A0628EDC82B00919235 /* HttpTestHelpers.swift in Sources */,
 				48CA3A0528EDC82800919235 /* FullstoryRemoteCommandTests.swift in Sources */,
 				48CA3A0428EDC82500919235 /* MockFullstoryInstance.swift in Sources */,
 			);

@@ -24,25 +24,25 @@ class FullstoryRemoteCommandTests: XCTestCase {
     
     func testIdentify() {
         let payload: [String: Any] = ["command_name": "identify", "uid": "1234", "user_variables": ["test1": "value1"]]
-        if let response = HttpTestHelpers.createRemoteCommandResponse(type: .webview, commandId: "fullstory", payload: payload) {
-                fullstoryCommand.completion(response)
-                XCTAssertEqual(1, fullstoryInstance.identifyUserCount)
-        }
+        fullstoryCommand.processRemoteCommand(with: payload)
+        XCTAssertEqual(1, fullstoryInstance.identifyUserCount)
+        XCTAssertEqual("value1", fullstoryInstance.testDictionary["test1"] as! String)
     }
     
     func testSetUserData() {
-        let payload: [String: Any] = ["command_name": "setuservariables", "user_variables": ["test1": "value1"]]
-        if let response = HttpTestHelpers.createRemoteCommandResponse(type: .webview, commandId: "fullstory", payload: payload) {
-            fullstoryCommand.completion(response)
-            XCTAssertEqual(1, fullstoryInstance.setUserDataCount)
-        }
+        let payload: [String: Any] = ["command_name": "setuservariables", "user_variables": ["test1": "value1", "first_name": "John", "last_name": "Doe"]]
+        fullstoryCommand.processRemoteCommand(with: payload)
+        XCTAssertEqual(1, fullstoryInstance.setUserDataCount)
+        XCTAssertEqual("value1", fullstoryInstance.testDictionary["test1"] as! String)
+        XCTAssertEqual("John", fullstoryInstance.testDictionary["first_name"] as! String)
+        XCTAssertEqual("Doe", fullstoryInstance.testDictionary["last_name"] as! String)
     }
     
     func testLogEvent() {
-        let payload: [String: Any] = ["command_name": "logevent", "event_name": "test_event", "event": ["test1": "value1"]]
-        if let response = HttpTestHelpers.createRemoteCommandResponse(type: .webview, commandId: "fullstory", payload: payload) {
-            fullstoryCommand.completion(response)
-            XCTAssertEqual(1, fullstoryInstance.logEventCount)
-        }
+        let payload: [String: Any] = ["command_name": "logevent", "event_name": "test_event", "event": ["event_test1": "value1", "event_test2": "value2"]]
+        fullstoryCommand.processRemoteCommand(with: payload)
+        XCTAssertEqual(1, fullstoryInstance.logEventCount)
+        XCTAssertEqual("value1", fullstoryInstance.testDictionary["event_test1"] as! String)
+        XCTAssertEqual("value2", fullstoryInstance.testDictionary["event_test2"] as! String)
     }
 }

@@ -53,9 +53,10 @@ public class FullstoryRemoteCommand: RemoteCommand {
                 }
                 fullstoryInstance.setUserData(data: userData)
             case FullstoryConstants.Commands.logEvent:
-                guard let eventName = payload[FullstoryConstants.EventKeys.eventName] as? String, let eventData = payload[FullstoryConstants.EventKeys.eventProperties] as? [String: Any] else {
+                guard let eventName = payload[FullstoryConstants.EventKeys.eventName] as? String else {
                     break
                 }
+                let eventData: [String: Any] = payload[FullstoryConstants.EventKeys.eventProperties] as? [String: Any] ?? [:]
                 fullstoryInstance.logEvent(eventName: eventName, eventData: eventData)
             default:
                 break

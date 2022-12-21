@@ -8,24 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		4771098B26E4BD50510668ED /* Pods_TealiumFullstorySample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B82C289893CDF661E1424D4 /* Pods_TealiumFullstorySample.framework */; };
+		48658068293E9D180016722E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48658067293E9D180016722E /* AppDelegate.swift */; };
 		48CA39C528EC78D900919235 /* TealiumFullstorySampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA39C428EC78D900919235 /* TealiumFullstorySampleApp.swift */; };
 		48CA39C728EC78D900919235 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA39C628EC78D900919235 /* ContentView.swift */; };
 		48CA39C928EC78DB00919235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48CA39C828EC78DB00919235 /* Assets.xcassets */; };
 		48CA39CC28EC78DB00919235 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48CA39CB28EC78DB00919235 /* Preview Assets.xcassets */; };
 		48CA3A2128F458DB00919235 /* TealiumHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA3A2028F458DB00919235 /* TealiumHelper.swift */; };
-		48CA3A2428F4620600919235 /* fullstory.json in Resources */ = {isa = PBXBuildFile; fileRef = 48CA3A2328F4620600919235 /* fullstory.json */; };
+		48CA3A2428F4620600919235 /* TealiumFullstory.json in Resources */ = {isa = PBXBuildFile; fileRef = 48CA3A2328F4620600919235 /* TealiumFullstory.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B82C289893CDF661E1424D4 /* Pods_TealiumFullstorySample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TealiumFullstorySample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		373EDCC2AABEFEFC04244801 /* Pods-TealiumFullstorySample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumFullstorySample.release.xcconfig"; path = "Target Support Files/Pods-TealiumFullstorySample/Pods-TealiumFullstorySample.release.xcconfig"; sourceTree = "<group>"; };
+		48658066293E9CA20016722E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		48658067293E9D180016722E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48CA39C128EC78D900919235 /* TealiumFullstorySample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TealiumFullstorySample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CA39C428EC78D900919235 /* TealiumFullstorySampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TealiumFullstorySampleApp.swift; sourceTree = "<group>"; };
 		48CA39C628EC78D900919235 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		48CA39C828EC78DB00919235 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48CA39CB28EC78DB00919235 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		48CA3A2028F458DB00919235 /* TealiumHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TealiumHelper.swift; sourceTree = "<group>"; };
-		48CA3A2328F4620600919235 /* fullstory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fullstory.json; sourceTree = "<group>"; };
+		48CA3A2328F4620600919235 /* TealiumFullstory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TealiumFullstory.json; sourceTree = "<group>"; };
 		5AE5519EDEF53F6CAB50A720 /* Pods-TealiumFullstorySample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumFullstorySample.debug.xcconfig"; path = "Target Support Files/Pods-TealiumFullstorySample/Pods-TealiumFullstorySample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,12 +65,14 @@
 		48CA39C328EC78D900919235 /* TealiumFullstorySample */ = {
 			isa = PBXGroup;
 			children = (
+				48658066293E9CA20016722E /* Info.plist */,
 				48CA39C428EC78D900919235 /* TealiumFullstorySampleApp.swift */,
 				48CA39C628EC78D900919235 /* ContentView.swift */,
 				48CA39C828EC78DB00919235 /* Assets.xcassets */,
 				48CA39CA28EC78DB00919235 /* Preview Content */,
 				48CA3A2028F458DB00919235 /* TealiumHelper.swift */,
-				48CA3A2328F4620600919235 /* fullstory.json */,
+				48CA3A2328F4620600919235 /* TealiumFullstory.json */,
+				48658067293E9D180016722E /* AppDelegate.swift */,
 			);
 			path = TealiumFullstorySample;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 				48CA39BE28EC78D900919235 /* Frameworks */,
 				48CA39BF28EC78D900919235 /* Resources */,
 				13AAE085D14CA2B33B5E9F56 /* [CP] Embed Pods Frameworks */,
+				48658065293E9C050016722E /* FullStory Command Line */,
 			);
 			buildRules = (
 			);
@@ -158,7 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48CA39CC28EC78DB00919235 /* Preview Assets.xcassets in Resources */,
-				48CA3A2428F4620600919235 /* fullstory.json in Resources */,
+				48CA3A2428F4620600919235 /* TealiumFullstory.json in Resources */,
 				48CA39C928EC78DB00919235 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +188,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TealiumFullstorySample/Pods-TealiumFullstorySample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		48658065293E9C050016722E /* FullStory Command Line */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "FullStory Command Line";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PROJECT_DIR\"/FullStoryTools/FullStoryCommandLine \\\n  \"${CONFIGURATION_BUILD_DIR}/${WRAPPER_NAME}\"\n";
 		};
 		66C455D7E813E05FC8B586C5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -212,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48658068293E9D180016722E /* AppDelegate.swift in Sources */,
 				48CA39C728EC78D900919235 /* ContentView.swift in Sources */,
 				48CA3A2128F458DB00919235 /* TealiumHelper.swift in Sources */,
 				48CA39C528EC78D900919235 /* TealiumFullstorySampleApp.swift in Sources */,
@@ -347,6 +372,7 @@
 				DEVELOPMENT_TEAM = XC939GDC9P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TealiumFullstorySample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -377,6 +403,7 @@
 				DEVELOPMENT_TEAM = XC939GDC9P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TealiumFullstorySample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

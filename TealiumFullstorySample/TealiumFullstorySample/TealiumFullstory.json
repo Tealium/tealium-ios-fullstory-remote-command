@@ -1,0 +1,20 @@
+{
+  "config": {},
+  "mappings": {
+    "uid": "uid",
+    "email": "user_variables.email_str",
+    "phone": "user_variables.phone_str",
+    "cart_id": "event.cart_id_str",
+    "product_id": "event.product_id_str",
+    "price": "event.price_real",
+    "name": "event.name_str",
+    "category": "event.categoryProperties",
+    "tealium_event": "event_name"
+  },
+  "commands": {
+    "launch": "logevent",
+    "identify_user": "identify",
+    "tealiumSampleEvent": "logevent",
+    "tealiumSampleEventWithData": "logevent"
+  }
+}

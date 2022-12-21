@@ -14,7 +14,7 @@ struct EventButton: View {
     
     var body: some View {
         Button(action: {
-            TealiumHelper.trackView(title: event, data: data)
+            TealiumHelper.trackEvent(title: event, data: data)
         }, label: {
             Text(title)
                 .frame(width: 200)
@@ -36,9 +36,9 @@ struct ContentView: View {
             TextField("UID", text: $uid).textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(width: 200)
                 .padding()
-            EventButton(title: "Identify User", event: "identify", data: ["uid": uid])
+            EventButton(title: "Identify User", event: "identify_user", data: ["uid": uid, "email": "sample@domain.com", "phone": "9999999999"])
             EventButton(title: "Track Event", event: "tealiumSampleEvent", data: [:])
-            EventButton(title: "Track Event With Data", event: "tealiumSampleEventWithData", data: ["sampleKey1": "sampleValue1", "sampleKey2": "sampleValue2"])
+            EventButton(title: "Track Event With Data", event: "tealiumSampleEventWithData", data: ["cart_id": "12345", "product_id": "54321", "price": 5.99, "name": "SampleEvent", "category": ["label": "misc"]])
         }
     }
 }
