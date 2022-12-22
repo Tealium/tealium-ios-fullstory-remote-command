@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = "11.0"    
 
     # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-    s.source       = { :git => "https://github.com/Tealium/tealium-ios-fullstory-remote-command.git", :tag => "#{s.version}", :flatten => true }
+    s.source       = { :git => "https://github.com/Tealium/tealium-ios-fullstory-remote-command.git", :tag => "#{s.version}" }
 
     # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.ios.source_files      = "Sources/**/*.{swift}"
