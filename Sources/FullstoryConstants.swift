@@ -11,7 +11,7 @@ enum FullstoryConstants {
     static let commandId = "fullstory"
     static let description = "Fullstory Remote Command"
     static let commandName = "command_name"
-    static let version = "1.0.0"
+    static let version = "1.1.0"
     static let seperator: Character = ","
     
     struct Commands {

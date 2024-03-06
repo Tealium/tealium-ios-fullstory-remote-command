@@ -4,13 +4,13 @@ import PackageDescription
 let package = Package(
     name: "TealiumFullstory",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v12)
     ],
     products: [
         .library(name: "TealiumFullstory", targets: ["TealiumFullstory"]),
     ],
     dependencies: [
-        .package(name: "TealiumSwift", url: "https://github.com/tealium/tealium-swift", .upToNextMajor(from: "2.7.0")),
+        .package(name: "TealiumSwift", url: "https://github.com/tealium/tealium-swift", .upToNextMajor(from: "2.12.0")),
         .package(name: "FullStory", url: "https://github.com/fullstorydev/fullstory-swift-package-ios", .upToNextMajor(from: "1.31.1"))
     ],
     targets: [

@@ -1,15 +1,15 @@
 PODS:
-  - tealium-swift/Core (2.7.0)
-  - tealium-swift/RemoteCommands (2.7.0):
+  - tealium-swift/Core (2.12.2)
+  - tealium-swift/RemoteCommands (2.12.2):
     - tealium-swift/Core
-  - tealium-swift/TagManagement (2.7.0):
+  - tealium-swift/TagManagement (2.12.2):
     - tealium-swift/Core
-  - TealiumFullstory (1.0.0):
-    - tealium-swift/Core (~> 2.7)
-    - tealium-swift/RemoteCommands (~> 2.7)
-    - tealium-swift/TagManagement (~> 2.7)
+  - TealiumFullstory (1.1.0):
+    - tealium-swift/Core (~> 2.12)
+    - tealium-swift/RemoteCommands (~> 2.12)
 
 DEPENDENCIES:
+  - tealium-swift/TagManagement
   - TealiumFullstory (from `../`)
 
 SPEC REPOS:
@@ -21,9 +21,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  tealium-swift: da6605540fc647f795932de24a17e031f73ae943
-  TealiumFullstory: 1854bf608c46b0d9e098acb0cbe9c6b087f50e3d
+  tealium-swift: 4b7e3dda42d7c1de6acb769abad9920346d17d43
+  TealiumFullstory: e6aae0ffa4ec80e18a75b72717c42a8f68f64800
 
-PODFILE CHECKSUM: f26e10f0aad2cfedd0c197e1bc8a488c298aa35d
+PODFILE CHECKSUM: aa65bb55ad75c4256d3f8d11d14de48cfbe134fc
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2
