@@ -10,12 +10,12 @@ let package = Package(
         .library(name: "TealiumFullstory", targets: ["TealiumFullstory"]),
     ],
     dependencies: [
-        .package(name: "TealiumSwift", url: "https://github.com/tealium/tealium-swift", .upToNextMajor(from: "2.12.0")),
-        .package(name: "FullStory", url: "https://github.com/fullstorydev/fullstory-swift-package-ios", .upToNextMajor(from: "1.31.1"))
+        .package(name: "TealiumSwift", url: "https://github.com/tealium/tealium-swift", .upToNextMajor(from: "2.18.2")),
+        .package(name: "FullStory", url: "https://github.com/fullstorydev/fullstory-swift-package-ios", .upToNextMajor(from: "1.68.3"))
     ],
     targets: [
         .target(
-            name: "TealiumFullStory",
+            name: "TealiumFullstory",
             dependencies: [
                 .product(name: "FullStory", package: "FullStory"),
                 .product(name: "TealiumCore", package: "TealiumSwift"),
@@ -25,8 +25,8 @@ let package = Package(
             exclude: ["Support"]
         ),
         .testTarget(
-            name: "TealiumFullStoryTests",
-            dependencies: ["TealiumFullStory"],
+            name: "TealiumFullstoryTests",
+            dependencies: ["TealiumFullstory"],
             path: "./Tests",
             exclude: ["Support"])
     ]

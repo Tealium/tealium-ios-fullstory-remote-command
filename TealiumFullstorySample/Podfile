@@ -7,6 +7,6 @@ target 'TealiumFullstorySample' do
 
   # Pods for TealiumFullstorySample
   pod "TealiumFullstory", :path => "../"
-  pod "tealium-swift/TagManagement"
+  pod "tealium-swift/TagManagement", "~> 2.18"
 
 end
