@@ -37,7 +37,7 @@ public class FullstoryRemoteCommand: RemoteCommand {
         guard let command = payload[FullstoryConstants.commandName] as? String else {
             return
         }
-        let commands = command.split(separator: FullstoryConstants.seperator)
+        let commands = command.split(separator: FullstoryConstants.separator)
         let fullstoryCommands = commands.map { $0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)}
         fullstoryCommands.forEach { command in
             switch(command) {
@@ -58,6 +58,26 @@ public class FullstoryRemoteCommand: RemoteCommand {
                 }
                 let eventData: [String: Any] = payload[FullstoryConstants.EventKeys.eventProperties] as? [String: Any] ?? [:]
                 fullstoryInstance.logEvent(eventName: eventName, eventData: eventData)
+            case FullstoryConstants.Commands.shutdown:
+                fullstoryInstance.shutdown()
+            case FullstoryConstants.Commands.restart:
+                fullstoryInstance.restart()
+            case FullstoryConstants.Commands.consent:
+                guard let allowed = payload[FullstoryConstants.EventKeys.consentGranted] as? Bool else {
+                    break
+                }
+                fullstoryInstance.consent(allowed: allowed)
+            case FullstoryConstants.Commands.anonymize:
+                fullstoryInstance.anonymize()
+            case FullstoryConstants.Commands.resetIdleTimer:
+                fullstoryInstance.resetIdleTimer()
+            case FullstoryConstants.Commands.log:
+                guard let message = payload[FullstoryConstants.EventKeys.logMessage] as? String,
+                      let level = payload[FullstoryConstants.EventKeys.logLevel] as? String,
+                      FullstoryConstants.LogLevels.valid.contains(level.lowercased()) else {
+                    break
+                }
+                fullstoryInstance.log(level: level, message: message)
             default:
                 break
             }

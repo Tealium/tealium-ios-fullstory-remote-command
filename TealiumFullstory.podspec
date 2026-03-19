@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
     # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.name         = "TealiumFullstory"
     s.module_name  = "TealiumFullstory"
-    s.version      = "1.1.0"
+    s.version      = "1.2.0"
     s.summary      = "Tealium Swift and Fullstory integration"
     s.description  = <<-DESC
     Tealium's integration with Fullstory for iOS.
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
     # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.swift_version = "5.0"
-    s.platform     = :ios, "12.0"
+    s.platform     = :ios, "12.2"
 
     # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.source       = { :git => "https://github.com/Tealium/tealium-ios-fullstory-remote-command.git", :tag => "#{s.version}" }
