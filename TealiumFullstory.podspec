@@ -26,11 +26,10 @@ Pod::Spec.new do |s|
     s.source       = { :git => "https://github.com/Tealium/tealium-ios-fullstory-remote-command.git", :tag => "#{s.version}" }
 
     # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-    s.ios.source_files      = "Sources/**/*.{swift}"
-    s.ios.exclude_files     = "Sources/Location/*"
+    s.ios.source_files      = "Sources/*.{swift}"
     # ――― Dependencies ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-    s.ios.dependency 'tealium-swift/Core', '~> 2.12'
-    s.ios.dependency 'tealium-swift/RemoteCommands', '~> 2.12'
+    s.ios.dependency 'tealium-swift/Core', '~> 2.18'
+    s.ios.dependency 'tealium-swift/RemoteCommands', '~> 2.18'
 
 end
 

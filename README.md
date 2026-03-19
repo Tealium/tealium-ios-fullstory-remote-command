@@ -1,4 +1,4 @@
-# tealium-ios-fullstory-remote-command
+# Tealium Fullstory
 
 [![License](https://img.shields.io/badge/license-Proprietary-blue.svg?style=flat
            )](https://github.com/Tealium/tealium-swift/blob/master/LICENSE.txt)
@@ -8,7 +8,7 @@
 
 
 ## Documentation
-For full documentation, please see the Tealium Docs Portal: 
+For full documentation, please see the Tealium Learning Community:
 
 [https://docs.tealium.com/platforms/remote-commands/integrations/fullstory/](https://docs.tealium.com/platforms/remote-commands/integrations/fullstory/)
 
@@ -21,5 +21,5 @@ license agreement.
 
  
 ---
-Copyright (C) 2012-2022, Tealium Inc.
+Copyright (C) 2012-2026, Tealium Inc.
 
