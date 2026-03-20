@@ -20,6 +20,8 @@ jobs:
           xcode-version: '16.4'
       - name: Bootstrap Carthage
         run: carthage bootstrap --use-xcframeworks --platform iOS
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
         run: xcodebuild build -scheme TealiumFullstory -destination "${{ matrix.destination }}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 
@@ -35,6 +37,8 @@ jobs:
           xcode-version: '16.4'
       - name: Bootstrap Carthage
         run: carthage bootstrap --use-xcframeworks --platform iOS
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Test
         run: xcodebuild test -scheme TealiumFullstoryTests -destination "platform=iOS Simulator,OS=18.5,name=iPhone 16 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 
