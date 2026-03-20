@@ -14,16 +14,16 @@ enum FullstoryConstants {
     static let version = "1.2.0"
     static let separator: Character = ","
 
-    struct Commands {
-        static let logEvent = "logevent"
-        static let identify = "identify"
-        static let setUserVariables = "setuservariables"
-        static let shutdown = "shutdown"
-        static let restart = "restart"
-        static let consent = "consent"
-        static let anonymize = "anonymize"
-        static let resetIdleTimer = "resetidletimer"
-        static let log = "log"
+    enum Commands: String {
+        case logEvent = "logevent"
+        case identify = "identify"
+        case setUserVariables = "setuservariables"
+        case shutdown = "shutdown"
+        case restart = "restart"
+        case consent = "consent"
+        case anonymize = "anonymize"
+        case resetIdleTimer = "resetidletimer"
+        case log = "log"
     }
 
     struct EventKeys {

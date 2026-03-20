@@ -17,7 +17,7 @@ public protocol FullstoryCommand {
     func consent(allowed: Bool)
     func anonymize()
     func resetIdleTimer()
-    func log(level: String, message: String)
+    func log(level: FSEventLogLevel, message: String)
 }
 
 public class FullstoryInstance: FullstoryCommand {
@@ -59,8 +59,7 @@ public class FullstoryInstance: FullstoryCommand {
         FS.resetIdleTimer()
     }
 
-    public func log(level: String, message: String) {
-        guard let logLevel = FSEventLogLevel(level) else { return }
-        FS.log(with: logLevel, message: message)
+    public func log(level: FSEventLogLevel, message: String) {
+        FS.log(with: level, message: message)
     }
 }

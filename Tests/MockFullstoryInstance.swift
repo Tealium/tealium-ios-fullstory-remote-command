@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FullStory
 @testable import TealiumFullstory
 
 class MockFullstoryInstance: FullstoryCommand {
@@ -20,7 +21,7 @@ class MockFullstoryInstance: FullstoryCommand {
     var logCount = 0
     var testDictionary: [String: Any] = [:]
     var lastConsentValue: Bool?
-    var lastLogLevel: String?
+    var lastLogLevel: FSEventLogLevel?
     var lastLogMessage: String?
 
     func identifyUser(id: String, data: [String: Any]?) {
@@ -59,7 +60,7 @@ class MockFullstoryInstance: FullstoryCommand {
         resetIdleTimerCount += 1
     }
 
-    func log(level: String, message: String) {
+    func log(level: FSEventLogLevel, message: String) {
         logCount += 1
         lastLogLevel = level
         lastLogMessage = message

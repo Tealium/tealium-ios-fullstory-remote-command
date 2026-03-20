@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FullStory
 @testable import TealiumFullstory
 import TealiumRemoteCommands
 import XCTest
@@ -120,7 +121,7 @@ class FullstoryRemoteCommandTests: XCTestCase {
         let payload: [String: Any] = ["command_name": "log", "log_level": "error", "log_message": "test message"]
         fullstoryCommand.processRemoteCommand(with: payload)
         XCTAssertEqual(1, fullstoryInstance.logCount)
-        XCTAssertEqual("error", fullstoryInstance.lastLogLevel)
+        XCTAssertEqual(.error, fullstoryInstance.lastLogLevel)
         XCTAssertEqual("test message", fullstoryInstance.lastLogMessage)
     }
 
