@@ -1,0 +1,200 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target x86_64-apple-ios12.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name FullStory
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import Combine
+@_exported import FullStory
+import OSLog
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@available(iOS 13, *)
+public protocol FSSelectableView {
+}
+@available(iOS 13, *)
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func fsSelectable(_ name: Swift.String) -> some SwiftUICore.View
+  
+  @_Concurrency.MainActor @preconcurrency public func fsAddClass(_ className: Swift.String?) -> some SwiftUICore.View
+  
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsAddClass(_ className: FullStory.FSViewClass?) -> some SwiftUICore.View {
+        self.fsAddClass(className?.rawValue)
+    }
+  
+  @_Concurrency.MainActor @preconcurrency public func fsAddClasses(_ classNames: [Swift.String]) -> some SwiftUICore.View
+  
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsAddClasses(_ classNames: [FullStory.FSViewClass]) -> some SwiftUICore.View {
+        self.fsAddClasses(classNames.map(\.rawValue))
+    }
+  
+  @available(*, deprecated, message: "The 'modify:' parameter is no longer used in fsAddClass.")
+  @_Concurrency.MainActor @preconcurrency public func fsAddClass(_ className: Swift.String?, modify: @escaping (UIKit.UIView) -> Swift.Void) -> some SwiftUICore.View
+  
+  @available(*, deprecated, message: "The 'modify:' parameter is no longer used in fsAddClass.")
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsAddClass(_ className: FullStory.FSViewClass?, modify: @escaping (UIKit.UIView) -> Swift.Void) -> some SwiftUICore.View {
+        self.fsAddClass(className?.rawValue, modify: modify)
+    }
+  
+  @available(*, deprecated, message: "The 'modify:' parameter is no longer used in fsAddClasses.")
+  @_Concurrency.MainActor @preconcurrency public func fsAddClasses(_ classNames: [Swift.String], modify: @escaping (UIKit.UIView) -> Swift.Void) -> some SwiftUICore.View
+  
+  @available(*, deprecated, message: "The 'modify:' parameter is no longer used in fsAddClasses.")
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsAddClasses(_ classNames: [FullStory.FSViewClass], modify: @escaping (UIKit.UIView) -> Swift.Void) -> some SwiftUICore.View {
+        self.fsAddClasses(classNames.map(\.rawValue), modify: modify)
+    }
+  
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsMask() -> some SwiftUICore.View {
+        fsAddClass(.mask)
+    }
+  
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsMaskWithoutConsent() -> some SwiftUICore.View {
+        fsAddClass(.maskWithoutConsent)
+    }
+  
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsUnmask() -> some SwiftUICore.View {
+        fsAddClass(.unmask)
+    }
+  
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsUnmaskWithConsent() -> some SwiftUICore.View {
+        fsAddClass(.unmaskWithConsent)
+    }
+  
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsExclude() -> some SwiftUICore.View {
+        fsAddClass(.exclude)
+    }
+  
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsExcludeWithoutConsent() -> some SwiftUICore.View {
+        fsAddClass(.excludeWithoutConsent)
+    }
+  
+  @_Concurrency.MainActor @preconcurrency public func fsRasterize() -> some SwiftUICore.View
+  
+  @_Concurrency.MainActor @preconcurrency public func fsSetAttribute(name: Swift.String, value: Swift.String) -> some SwiftUICore.View
+  
+  @_Concurrency.MainActor @preconcurrency public func fsSetAttributes(_ attrs: [Swift.String : Swift.String]) -> some SwiftUICore.View
+  
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+@frozen public struct FSGrid<Content> where Content : SwiftUICore.View {
+  @usableFromInline
+  internal var _tree: SwiftUICore._VariadicView.Tree<SwiftUI.GridLayout, Content>
+  public typealias Body = Swift.Never
+}
+@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+@frozen public struct FSGridRow<Content> where Content : SwiftUICore.View {
+  @usableFromInline
+  internal var alignment: SwiftUICore.VerticalAlignment?
+  @usableFromInline
+  internal var content: Content
+  public typealias Body = Swift.Never
+}
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@frozen @_Concurrency.MainActor @preconcurrency public struct FSHStack<Content> : SwiftUICore.View where Content : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public var body: Swift.Never {
+    get
+  }
+  @usableFromInline
+  @_Concurrency.MainActor @preconcurrency internal var _tree: SwiftUICore._VariadicView.Tree<SwiftUICore._HStackLayout, Content>
+  @inlinable @_Concurrency.MainActor @preconcurrency public init(alignment: SwiftUICore.VerticalAlignment = .center, spacing: CoreFoundation.CGFloat? = nil, @SwiftUICore.ViewBuilder content: () -> Content) {
+      _tree = _VariadicView.Tree.init(
+            _HStackLayout(alignment: alignment, spacing: spacing), content: content)
+    }
+  public typealias Body = Swift.Never
+}
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@frozen @_Concurrency.MainActor @preconcurrency public struct FSVStack<Content> : SwiftUICore.View where Content : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public var body: Swift.Never {
+    get
+  }
+  @usableFromInline
+  @_Concurrency.MainActor @preconcurrency internal var _tree: SwiftUICore._VariadicView.Tree<SwiftUICore._VStackLayout, Content>
+  @inlinable @_Concurrency.MainActor @preconcurrency public init(alignment: SwiftUICore.HorizontalAlignment = .center, spacing: CoreFoundation.CGFloat? = nil, @SwiftUICore.ViewBuilder content: () -> Content) {
+      _tree = _VariadicView.Tree.init(
+            _VStackLayout(alignment: alignment, spacing: spacing), content: content)
+    }
+  public typealias Body = Swift.Never
+}
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@frozen public struct _FSConditionalContent<TrueContent, FalseContent> {
+  @usableFromInline
+  @frozen internal enum Storage {
+    case trueContent(TrueContent)
+    case falseContent(FalseContent)
+  }
+  @usableFromInline
+  internal let storage: FullStory._FSConditionalContent<TrueContent, FalseContent>.Storage
+}
+@_inheritsConvenienceInitializers @objc(FSSwiftStuff) public class FSSwiftStuff : ObjectiveC.NSObject {
+  @objc public static var radiusToValue: Foundation.NSMapTable<Foundation.NSNumber, ObjectiveC.NSObject>
+  @objc public static var offsetToValue: Foundation.NSMutableDictionary
+  @objc public static var viewPropertiesToType: Foundation.NSMutableDictionary
+  @objc public static func fatal(message: Swift.String)
+  public static func _getTypeValue(_ s: Foundation.NSString) -> CoreFoundation.CGFloat
+  public static func _getTextValue(_ s: Foundation.NSString) -> CoreFoundation.CGFloat
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension FullStory.FSViewClass : Swift.ExpressibleByStringLiteral {
+  @inlinable public init(stringLiteral value: Swift.String) {
+        self.init(value)
+    }
+  @inlinable public init(unicodeScalarLiteral value: Swift.String) {
+        self.init(value)
+    }
+  @inlinable public init(extendedGraphemeClusterLiteral value: Swift.String) {
+        self.init(value)
+    }
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias StringLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+}
+extension FullStory.FSViewClass : Swift.ExpressibleByStringInterpolation {
+  @inlinable public init(stringInterpolation: Swift.DefaultStringInterpolation) {
+        self.init(String(stringInterpolation: stringInterpolation))
+    }
+  public typealias StringInterpolation = Swift.DefaultStringInterpolation
+}
+extension FullStory.FS {
+  @inlinable public static func addClass(_ view: UIKit.UIView, className name: Swift.String) {
+        self.addClass(view, className: FSViewClass(name))
+    }
+  @inlinable public static func removeClass(_ view: UIKit.UIView, className name: Swift.String) {
+        self.removeClass(view, className: FSViewClass(name))
+    }
+  @inlinable public static func addClasses(_ view: UIKit.UIView, classNames names: [Swift.String]) {
+        self.addClasses(view, classNames: names.map(FSViewClass.init(rawValue:)))
+    }
+  @inlinable public static func removeClasses(_ view: UIKit.UIView, classNames names: [Swift.String]) {
+        self.removeClasses(view, classNames: names.map(FSViewClass.init(rawValue:)))
+    }
+}
+extension UIKit.UIView {
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsAddClass(_ name: Swift.String) {
+        self.fsAddClass(FSViewClass(name))
+    }
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsRemoveClass(_ name: Swift.String) {
+        self.fsRemoveClass(FSViewClass(name))
+    }
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsAddClasses(_ names: [Swift.String]) {
+        self.fsAddClasses(names.map(FSViewClass.init(rawValue:)))
+    }
+  @inlinable @_Concurrency.MainActor @preconcurrency public func fsRemoveClasses(_ names: [Swift.String]) {
+        self.fsRemoveClasses(names.map(FSViewClass.init(rawValue:)))
+    }
+}
+extension FullStory.FSEventLogLevel : Swift.CaseIterable {
+  public static let allCases: [FullStory.FSEventLogLevel]
+  public typealias AllCases = [FullStory.FSEventLogLevel]
+}
+extension FullStory.FSEventLogLevel : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+extension FullStory.FSHStack : Swift.Sendable {}
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+extension FullStory.FSVStack : Swift.Sendable {}
