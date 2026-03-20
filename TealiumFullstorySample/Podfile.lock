@@ -4,7 +4,7 @@ PODS:
     - tealium-swift/Core
   - tealium-swift/TagManagement (2.18.2):
     - tealium-swift/Core
-  - TealiumFullstory (1.1.0):
+  - TealiumFullstory (1.2.0):
     - tealium-swift/Core (~> 2.18)
     - tealium-swift/RemoteCommands (~> 2.18)
 
@@ -22,8 +22,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   tealium-swift: 9c38e6687b24c9eed0f3bc221ea5d7717274af16
-  TealiumFullstory: 22f771cad078396528b58f90b7444541cc8bc731
+  TealiumFullstory: cf3c70ca654ead84527daeb84dc9b43bff7a5299
 
-PODFILE CHECKSUM: 8a78bc6f50eb6a78a2da91f4f234ee3a5e98abb9
+PODFILE CHECKSUM: e83631d69d64e0ecb2f8387cede8393039bdf543
 
 COCOAPODS: 1.16.2
