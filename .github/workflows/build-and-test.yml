@@ -31,7 +31,7 @@ jobs:
       - name: Test
         run: |
           rm -rf TealiumFullstory.xcodeproj
-          xcodebuild test -scheme TealiumFullstoryTests -destination "platform=iOS Simulator,OS=18.5,name=iPhone 16 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+          xcodebuild test -scheme TealiumFullstory -destination "platform=iOS Simulator,OS=18.5,name=iPhone 16 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 
   build_example:
     name: Example Build | TealiumFullstorySample
@@ -46,6 +46,8 @@ jobs:
       - name: Pod Install
         run: pod install
         working-directory: TealiumFullstorySample
+      - name: Boot simulator
+        run: xcrun simctl boot "iPhone 16 Pro" 2>/dev/null || true
       - name: Build
         working-directory: TealiumFullstorySample
         run: xcodebuild build -workspace TealiumFullstorySample.xcworkspace -scheme TealiumFullstorySample -destination "generic/platform=iOS Simulator" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
