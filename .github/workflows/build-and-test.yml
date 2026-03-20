@@ -46,6 +46,8 @@ jobs:
       - name: Pod Install
         run: pod install
         working-directory: TealiumFullstorySample
+      - name: Initialize CoreSimulator
+        run: xcrun simctl list
       - name: Build
         working-directory: TealiumFullstorySample
-        run: xcodebuild build -workspace TealiumFullstorySample.xcworkspace -scheme TealiumFullstorySample -destination "generic/platform=iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+        run: xcodebuild build -workspace TealiumFullstorySample.xcworkspace -scheme TealiumFullstorySample -destination "generic/platform=iOS Simulator" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
