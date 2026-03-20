@@ -1,10 +1,12 @@
 PODS:
+  - FullStory (1.68.3)
   - tealium-swift/Core (2.18.2)
   - tealium-swift/RemoteCommands (2.18.2):
     - tealium-swift/Core
   - tealium-swift/TagManagement (2.18.2):
     - tealium-swift/Core
   - TealiumFullstory (1.2.0):
+    - FullStory (~> 1.68)
     - tealium-swift/Core (~> 2.18)
     - tealium-swift/RemoteCommands (~> 2.18)
 
@@ -14,6 +16,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - FullStory
     - tealium-swift
 
 EXTERNAL SOURCES:
@@ -21,8 +24,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  FullStory: 6b2320dcd283d52c26924fd3f08a1204ad4a0453
   tealium-swift: 9c38e6687b24c9eed0f3bc221ea5d7717274af16
-  TealiumFullstory: cf3c70ca654ead84527daeb84dc9b43bff7a5299
+  TealiumFullstory: 7b25cacc38761e32f3ae33b9d84b813038e44747
 
 PODFILE CHECKSUM: e83631d69d64e0ecb2f8387cede8393039bdf543
 

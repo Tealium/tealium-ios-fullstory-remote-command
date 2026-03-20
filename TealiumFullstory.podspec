@@ -8,12 +8,11 @@ Pod::Spec.new do |s|
     s.description  = <<-DESC
     Tealium's integration with Fullstory for iOS.
     DESC
-    s.vendored_frameworks = 'Frameworks/FullStory.xcframework'
     s.homepage     = "https://github.com/Tealium/tealium-ios-fullstory-remote-command"
 
     # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.license      = { :type => "Commercial", :file => "LICENSE.txt" }
-    
+
     # ――― Author Metadata ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.authors            = { "Tealium Inc." => "tealium@tealium.com" }
     s.social_media_url   = "https://twitter.com/tealium"
@@ -30,6 +29,7 @@ Pod::Spec.new do |s|
     # ――― Dependencies ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.ios.dependency 'tealium-swift/Core', '~> 2.18'
     s.ios.dependency 'tealium-swift/RemoteCommands', '~> 2.18'
+    s.ios.dependency 'FullStory', '~> 1.68'
 
 end
 

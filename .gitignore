@@ -64,7 +64,3 @@ Carthage/
 
 *.xcframework
 *.xcframework.zip
-
-# Vendored frameworks checked into the repo are exempt from the above rules.
-!Frameworks/FullStory.xcframework/
-!Frameworks/FullStory.xcframework/**
