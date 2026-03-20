@@ -26,16 +26,6 @@ enum FullstoryConstants {
         static let log = "log"
     }
 
-    struct LogLevels {
-        static let valid: Set<String> = [
-            "assert", "fslog_assert",
-            "error",  "fslog_error",
-            "warning","fslog_warning",
-            "info",   "fslog_info",
-            "debug",  "fslog_debug"
-        ]
-    }
-
     struct EventKeys {
         static let eventName = "event_name"
         static let eventProperties = "event"

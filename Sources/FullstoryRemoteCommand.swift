@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FullStory
 #if COCOAPODS
     import TealiumSwift
 #else
@@ -74,7 +75,7 @@ public class FullstoryRemoteCommand: RemoteCommand {
             case FullstoryConstants.Commands.log:
                 guard let message = payload[FullstoryConstants.EventKeys.logMessage] as? String,
                       let level = payload[FullstoryConstants.EventKeys.logLevel] as? String,
-                      FullstoryConstants.LogLevels.valid.contains(level.lowercased()) else {
+                      FSEventLogLevel(level) != nil else {
                     break
                 }
                 fullstoryInstance.log(level: level, message: message)

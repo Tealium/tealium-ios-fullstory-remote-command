@@ -21,14 +21,12 @@ let package = Package(
                 .product(name: "TealiumCore", package: "TealiumSwift"),
                 .product(name: "TealiumRemoteCommands", package: "TealiumSwift")
             ],
-            path: "./Sources",
-            exclude: ["Support"]
+            path: "./Sources"
         ),
         .testTarget(
             name: "TealiumFullstoryTests",
             dependencies: ["TealiumFullstory"],
-            path: "./Tests",
-            exclude: ["Support"])
+            path: "./Tests")
     ]
 )
 

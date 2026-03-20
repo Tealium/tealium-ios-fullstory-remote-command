@@ -60,15 +60,7 @@ public class FullstoryInstance: FullstoryCommand {
     }
 
     public func log(level: String, message: String) {
-        let logLevel: FSEventLogLevel
-        switch level.lowercased() {
-        case "assert",  "fslog_assert":  logLevel = FSEventLogLevelAssert
-        case "error",   "fslog_error":   logLevel = FSEventLogLevelError
-        case "warning", "fslog_warning": logLevel = FSEventLogLevelWarning
-        case "info",    "fslog_info":    logLevel = FSEventLogLevelInfo
-        case "debug",   "fslog_debug":   logLevel = FSEventLogLevelDebug
-        default: return
-        }
+        guard let logLevel = FSEventLogLevel(level) else { return }
         FS.log(with: logLevel, message: message)
     }
 }
