@@ -49,8 +49,9 @@ jobs:
         working-directory: TealiumFullstorySample
       - name: Boot Simulator
         run: |
+          open -a Simulator
           xcrun simctl boot "iPhone 16 Pro" || true
-          xcrun simctl list devices | grep Booted
+          xcrun simctl bootstatus "iPhone 16 Pro" -b
       - name: Build
         working-directory: TealiumFullstorySample
         run: xcodebuild build -workspace TealiumFullstorySample.xcworkspace -scheme TealiumFullstorySample -destination "platform=iOS Simulator,OS=18.5,name=iPhone 16 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
