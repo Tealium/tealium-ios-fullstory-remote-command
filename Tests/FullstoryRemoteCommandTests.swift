@@ -142,4 +142,18 @@ class FullstoryRemoteCommandTests: XCTestCase {
         fullstoryCommand.processRemoteCommand(with: payload)
         XCTAssertEqual(0, fullstoryInstance.logCount)
     }
+
+    func testMultipleCommands() {
+        let payload: [String: Any] = ["command_name": "shutdown,restart"]
+        fullstoryCommand.processRemoteCommand(with: payload)
+        XCTAssertEqual(1, fullstoryInstance.shutdownCount)
+        XCTAssertEqual(1, fullstoryInstance.restartCount)
+    }
+
+    func testMultipleCommandsWithSpaces() {
+        let payload: [String: Any] = ["command_name": "shutdown, restart"]
+        fullstoryCommand.processRemoteCommand(with: payload)
+        XCTAssertEqual(1, fullstoryInstance.shutdownCount)
+        XCTAssertEqual(1, fullstoryInstance.restartCount)
+    }
 }
