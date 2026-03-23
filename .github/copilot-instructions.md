@@ -31,24 +31,9 @@ The optional `VendorType+String.swift` file is needed when a vendor SDK enum mus
 
 **RemoteCommand subclass** — owns `weak var weakSelf` trick in `super.init` closure to avoid retain cycle. Splits `command_name` on `FullstoryConstants.separator` (comma), trims whitespace from each token, dispatches via `switch`.
 
-## Command Dispatch — Two Valid Patterns
+## Command Dispatch
 
-**Pattern A — `struct Commands` + `switch` on String** (used in this repo):
-
-```swift
-struct Commands {
-    static let logEvent = "logevent"
-}
-// dispatch:
-commands.forEach { command in
-    switch command {
-    case Commands.logEvent: ...
-    default: break   // unknown command silently skipped
-    }
-}
-```
-
-**Pattern B — `enum Commands: String` + `compactMap`** (used in Firebase/Braze repos):
+Use `enum Commands: String` + `compactMap` (the only pattern used in this repo):
 
 ```swift
 enum Commands: String {
@@ -58,11 +43,11 @@ enum Commands: String {
 commands
     .compactMap { Commands(rawValue: $0.lowercased()) }
     .forEach { command in
-        switch command { ... }   // exhaustive — no default needed
+        switch command { ... }   // exhaustive — compiler error on missing cases
     }
 ```
 
-Pattern B gives exhaustive switch coverage (compiler error on missing cases) and drops unknown commands silently via `compactMap`. Pattern A is simpler for small command sets. Do not mix the two in the same file.
+Unknown commands are dropped silently via `compactMap`. The exhaustive `switch` ensures every case is handled — no `default` needed.
 
 ## Known Footguns — Must Catch
 
@@ -100,18 +85,6 @@ case .identify:
     instance.identifyUser(id: uid)
 ```
 
-**Retain cycle in super.init closure** — `RemoteCommand.init` takes a closure that captures `self`. Always use the `weak var weakSelf` pattern:
-
-```swift
-public init(...) {
-    weak var weakSelf: XxxRemoteCommand?
-    super.init(commandId: ..., completion: { response in
-        weakSelf?.processRemoteCommand(with: response.payload ?? [:])
-    })
-    weakSelf = self
-}
-```
-
 **SPM vs CocoaPods import guard** — every file importing TealiumSwift must use the conditional:
 
 ```swift
@@ -124,8 +97,6 @@ public init(...) {
 ```
 
 Missing this breaks one of the two distribution channels.
-
-**Version string drift** — `XxxConstants.version` must match `s.version` in the podspec and the tag. Flag any mismatch.
 
 **Vendor SDK not wrapped by protocol** — vendor SDK calls must only appear inside `XxxInstance`, never directly in `XxxRemoteCommand`. This is what makes the protocol/instance split valuable: tests run without the vendor SDK linked.
 

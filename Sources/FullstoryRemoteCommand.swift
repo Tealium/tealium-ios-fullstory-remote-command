@@ -45,14 +45,20 @@ public class FullstoryRemoteCommand: RemoteCommand {
             .forEach { command in
                 switch command {
                 case .identify:
-                    guard let uid = payload[FullstoryConstants.EventKeys.uid] as? String else { return }
+                    guard let uid = payload[FullstoryConstants.EventKeys.uid] as? String else {
+                        return
+                    }
                     let userData = payload[FullstoryConstants.EventKeys.userVariables] as? [String: Any]
                     fullstoryInstance.identifyUser(id: uid, data: userData)
                 case .setUserVariables:
-                    guard let userData = payload[FullstoryConstants.EventKeys.userVariables] as? [String: Any] else { return }
+                    guard let userData = payload[FullstoryConstants.EventKeys.userVariables] as? [String: Any] else {
+                        return
+                    }
                     fullstoryInstance.setUserData(data: userData)
                 case .logEvent:
-                    guard let eventName = payload[FullstoryConstants.EventKeys.eventName] as? String else { return }
+                    guard let eventName = payload[FullstoryConstants.EventKeys.eventName] as? String else {
+                        return
+                    }
                     let eventData = payload[FullstoryConstants.EventKeys.eventProperties] as? [String: Any] ?? [:]
                     fullstoryInstance.logEvent(eventName: eventName, eventData: eventData)
                 case .shutdown:
@@ -60,7 +66,9 @@ public class FullstoryRemoteCommand: RemoteCommand {
                 case .restart:
                     fullstoryInstance.restart()
                 case .consent:
-                    guard let allowed = payload[FullstoryConstants.EventKeys.consentGranted] as? Bool else { return }
+                    guard let allowed = payload[FullstoryConstants.EventKeys.consentGranted] as? Bool else {
+                        return
+                    }
                     fullstoryInstance.consent(allowed: allowed)
                 case .anonymize:
                     fullstoryInstance.anonymize()
@@ -69,7 +77,9 @@ public class FullstoryRemoteCommand: RemoteCommand {
                 case .log:
                     guard let message = payload[FullstoryConstants.EventKeys.logMessage] as? String,
                           let levelString = payload[FullstoryConstants.EventKeys.logLevel] as? String,
-                          let level = FSEventLogLevel(levelString) else { return }
+                          let level = FSEventLogLevel(levelString) else {
+                        return
+                    }
                     fullstoryInstance.log(level: level, message: message)
                 }
             }

@@ -156,4 +156,13 @@ class FullstoryRemoteCommandTests: XCTestCase {
         XCTAssertEqual(1, fullstoryInstance.shutdownCount)
         XCTAssertEqual(1, fullstoryInstance.restartCount)
     }
+
+    func testNoRetainCycle() {
+        weak var weakCommand: FullstoryRemoteCommand?
+        autoreleasepool {
+            let command = FullstoryRemoteCommand(fullstoryInstance: MockFullstoryInstance())
+            weakCommand = command
+        }
+        XCTAssertNil(weakCommand, "FullstoryRemoteCommand was not deallocated — retain cycle detected")
+    }
 }

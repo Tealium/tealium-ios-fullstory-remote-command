@@ -3,6 +3,15 @@ name: Build and Test
 on: [pull_request]
 
 jobs:
+  validate_versions:
+    name: Validate versions
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Versions
+        run: scripts/validate_versions.sh
+
+
   build:
     name: Build | TealiumFullstory | generic/platform=iOS
     runs-on: 'macOS-15'
