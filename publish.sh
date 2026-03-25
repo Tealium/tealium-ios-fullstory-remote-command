@@ -28,7 +28,7 @@ latestTag=$(git describe --tags --abbrev=0)
 echo Latest tag "$latestTag"
 if [ "$latestTag" != "$versionConstant" ]
 then
-  printf "The latest published tag \"%s\" is different from the version constant \"%s\".\nDid you forget to add the tag to the release or did you forget to update the Constant?" "$latestTag" "$versionConstant"
+  printf "The latest published tag \"%s\" is different from the version constant \"%s\".\nDid you forget to add the tag to the release or did you forget to update the Constant?\n" "$latestTag" "$versionConstant"
   exit 1
 fi
 

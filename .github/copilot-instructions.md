@@ -27,7 +27,7 @@ The optional `VendorType+String.swift` file is needed when a vendor SDK enum mus
 
 **Constants** — single source of truth for all string literals. No raw strings anywhere else.
 
-**Protocol + Instance split** — `XxxCommand` protocol allows injecting `MockXxxInstance` in tests without linking the real vendor SDK. `XxxInstance` is the only class that imports the vendor framework directly.
+**Protocol + Instance split** — `XxxCommand` protocol allows injecting `MockXxxInstance` in tests without linking the real vendor SDK. `XxxInstance` is the only class that makes direct calls into the vendor SDK; other files may import the vendor framework only for type/enum declarations or string-to-enum mappings (e.g. `VendorType+String.swift`), and must not invoke vendor SDK methods.
 
 **RemoteCommand subclass** — owns `weak var weakSelf` trick in `super.init` closure to avoid retain cycle. Splits `command_name` on `FullstoryConstants.separator` (comma), trims whitespace from each token, dispatches via `switch`.
 
