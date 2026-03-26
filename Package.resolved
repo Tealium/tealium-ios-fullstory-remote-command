@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "FullStory",
+        "repositoryURL": "https://github.com/fullstorydev/fullstory-swift-package-ios",
+        "state": {
+          "branch": null,
+          "revision": "ca2ff69d8cd0d34b05a8db5d8401196e52078c14",
+          "version": "1.68.3"
+        }
+      },
+      {
+        "package": "TealiumSwift",
+        "repositoryURL": "https://github.com/tealium/tealium-swift",
+        "state": {
+          "branch": null,
+          "revision": "a2ae13c20667d1d34bc0150cbfa79805e928eb15",
+          "version": "2.18.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

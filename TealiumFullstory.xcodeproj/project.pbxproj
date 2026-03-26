@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,6 +37,7 @@
 		48CA39FC28EC831400919235 /* TealiumCollect.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48CA39E428EC831300919235 /* TealiumCollect.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		48CA3A0428EDC82500919235 /* MockFullstoryInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA39FE28EDC7D800919235 /* MockFullstoryInstance.swift */; };
 		48CA3A0528EDC82800919235 /* FullstoryRemoteCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CA3A0028EDC7E500919235 /* FullstoryRemoteCommandTests.swift */; };
+		9E9BBB7A2F6D32F700171995 /* FSEventLogLevel+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9BBB792F6D32F700171995 /* FSEventLogLevel+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,20 +81,21 @@
 		48CA39D228EC793800919235 /* FullstoryInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullstoryInstance.swift; sourceTree = "<group>"; };
 		48CA39D428EC794100919235 /* FullstoryConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullstoryConstants.swift; sourceTree = "<group>"; };
 		48CA39D628EC794A00919235 /* FullstoryRemoteCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullstoryRemoteCommand.swift; sourceTree = "<group>"; };
-		48CA39D928EC831300919235 /* TealiumAttribution.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumAttribution.xcframework; path = Carthage/Build/TealiumAttribution.xcframework; sourceTree = "<group>"; };
-		48CA39DA28EC831300919235 /* TealiumAutotracking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumAutotracking.xcframework; path = Carthage/Build/TealiumAutotracking.xcframework; sourceTree = "<group>"; };
-		48CA39DB28EC831300919235 /* TealiumLifecycle.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumLifecycle.xcframework; path = Carthage/Build/TealiumLifecycle.xcframework; sourceTree = "<group>"; };
-		48CA39DC28EC831300919235 /* TealiumLocation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumLocation.xcframework; path = Carthage/Build/TealiumLocation.xcframework; sourceTree = "<group>"; };
-		48CA39DD28EC831300919235 /* TealiumRemoteCommands.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumRemoteCommands.xcframework; path = Carthage/Build/TealiumRemoteCommands.xcframework; sourceTree = "<group>"; };
-		48CA39DE28EC831300919235 /* TealiumMedia.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumMedia.xcframework; path = Carthage/Build/TealiumMedia.xcframework; sourceTree = "<group>"; };
-		48CA39DF28EC831300919235 /* TealiumVisitorService.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumVisitorService.xcframework; path = Carthage/Build/TealiumVisitorService.xcframework; sourceTree = "<group>"; };
-		48CA39E028EC831300919235 /* TealiumCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumCore.xcframework; path = Carthage/Build/TealiumCore.xcframework; sourceTree = "<group>"; };
-		48CA39E128EC831300919235 /* TealiumInAppPurchase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumInAppPurchase.xcframework; path = Carthage/Build/TealiumInAppPurchase.xcframework; sourceTree = "<group>"; };
-		48CA39E228EC831300919235 /* TealiumTagManagement.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumTagManagement.xcframework; path = Carthage/Build/TealiumTagManagement.xcframework; sourceTree = "<group>"; };
+		48CA39D928EC831300919235 /* TealiumAttribution.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumAttribution.xcframework; path = Carthage/Build/TealiumAttribution.xcframework; sourceTree = "<group>"; };
+		48CA39DA28EC831300919235 /* TealiumAutotracking.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumAutotracking.xcframework; path = Carthage/Build/TealiumAutotracking.xcframework; sourceTree = "<group>"; };
+		48CA39DB28EC831300919235 /* TealiumLifecycle.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumLifecycle.xcframework; path = Carthage/Build/TealiumLifecycle.xcframework; sourceTree = "<group>"; };
+		48CA39DC28EC831300919235 /* TealiumLocation.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumLocation.xcframework; path = Carthage/Build/TealiumLocation.xcframework; sourceTree = "<group>"; };
+		48CA39DD28EC831300919235 /* TealiumRemoteCommands.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumRemoteCommands.xcframework; path = Carthage/Build/TealiumRemoteCommands.xcframework; sourceTree = "<group>"; };
+		48CA39DE28EC831300919235 /* TealiumMedia.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumMedia.xcframework; path = Carthage/Build/TealiumMedia.xcframework; sourceTree = "<group>"; };
+		48CA39DF28EC831300919235 /* TealiumVisitorService.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumVisitorService.xcframework; path = Carthage/Build/TealiumVisitorService.xcframework; sourceTree = "<group>"; };
+		48CA39E028EC831300919235 /* TealiumCore.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumCore.xcframework; path = Carthage/Build/TealiumCore.xcframework; sourceTree = "<group>"; };
+		48CA39E128EC831300919235 /* TealiumInAppPurchase.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumInAppPurchase.xcframework; path = Carthage/Build/TealiumInAppPurchase.xcframework; sourceTree = "<group>"; };
+		48CA39E228EC831300919235 /* TealiumTagManagement.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumTagManagement.xcframework; path = Carthage/Build/TealiumTagManagement.xcframework; sourceTree = "<group>"; };
 		48CA39E328EC831300919235 /* FullStory.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FullStory.xcframework; path = Carthage/Build/FullStory.xcframework; sourceTree = "<group>"; };
-		48CA39E428EC831300919235 /* TealiumCollect.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumCollect.xcframework; path = Carthage/Build/TealiumCollect.xcframework; sourceTree = "<group>"; };
+		48CA39E428EC831300919235 /* TealiumCollect.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumCollect.xcframework; path = Carthage/Build/TealiumCollect.xcframework; sourceTree = "<group>"; };
 		48CA39FE28EDC7D800919235 /* MockFullstoryInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFullstoryInstance.swift; sourceTree = "<group>"; };
 		48CA3A0028EDC7E500919235 /* FullstoryRemoteCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullstoryRemoteCommandTests.swift; sourceTree = "<group>"; };
+		9E9BBB792F6D32F700171995 /* FSEventLogLevel+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FSEventLogLevel+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 		48CA39A228EC78BA00919235 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9E9BBB792F6D32F700171995 /* FSEventLogLevel+String.swift */,
 				48CA39D228EC793800919235 /* FullstoryInstance.swift */,
 				48CA39D428EC794100919235 /* FullstoryConstants.swift */,
 				48CA39D628EC794A00919235 /* FullstoryRemoteCommand.swift */,
@@ -296,6 +299,7 @@
 			files = (
 				48CA39D728EC794A00919235 /* FullstoryRemoteCommand.swift in Sources */,
 				48CA39D528EC794100919235 /* FullstoryConstants.swift in Sources */,
+				9E9BBB7A2F6D32F700171995 /* FSEventLogLevel+String.swift in Sources */,
 				48CA39D328EC793800919235 /* FullstoryInstance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+# A script to verify that the repo is up to date and the versions are correct and then runs the pod trunk push command
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="${SCRIPT_DIR}/.."
+source "${SCRIPT_DIR}/validate_versions.sh"
+
+versionConstant="$(get_version)"
+echo "Version: $versionConstant"
+
+branch_name="$(git rev-parse --abbrev-ref HEAD)"
+echo Current branch "$branch_name"
+if [ "$branch_name" != "main" ]
+then
+  echo "Check out to main branch before trying to publish. Current branch: ${branch_name}"
+  exit 1
+fi
+
+git fetch --tags
+if ! git diff --quiet remotes/origin/main
+then
+  echo "Make sure you are up to date with the remote before publishing"
+  exit 1
+fi
+
+latestTag=$(git describe --tags --abbrev=0)
+
+echo Latest tag "$latestTag"
+if [ "$latestTag" != "$versionConstant" ]
+then
+  printf "The latest published tag \"%s\" is different from the version constant \"%s\".\nDid you forget to add the tag to the release or did you forget to update the Constant?\n" "$latestTag" "$versionConstant"
+  exit 1
+fi
+
+echo "All checks are passed, ready to release to CocoaPods"
+
+echo "Do you wish to publish to CocoaPods?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) echo "Ok, running \"pod trunk push\" now."; pod trunk push; break;;
+        No ) echo "Ok, skip the release for now."; exit;;
+    esac
+done

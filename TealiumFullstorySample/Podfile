@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '12.0'
+platform :ios, '12.2'
 
 target 'TealiumFullstorySample' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -7,6 +7,6 @@ target 'TealiumFullstorySample' do
 
   # Pods for TealiumFullstorySample
   pod "TealiumFullstory", :path => "../"
-  pod "tealium-swift/TagManagement"
+  pod "tealium-swift/TagManagement", "~> 2.18"
 
 end

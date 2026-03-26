@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FullStory
 #if COCOAPODS
     import TealiumSwift
 #else
@@ -37,30 +38,50 @@ public class FullstoryRemoteCommand: RemoteCommand {
         guard let command = payload[FullstoryConstants.commandName] as? String else {
             return
         }
-        let commands = command.split(separator: FullstoryConstants.seperator)
-        let fullstoryCommands = commands.map { $0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)}
-        fullstoryCommands.forEach { command in
-            switch(command) {
-            case FullstoryConstants.Commands.identify:
-                guard let uid = payload[FullstoryConstants.EventKeys.uid] as? String else {
-                    break
+        let commands = command.split(separator: FullstoryConstants.separator)
+        commands
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .compactMap { FullstoryConstants.Commands(rawValue: $0.lowercased()) }
+            .forEach { command in
+                switch command {
+                case .identify:
+                    guard let uid = payload[FullstoryConstants.EventKeys.uid] as? String else {
+                        return
+                    }
+                    let userData = payload[FullstoryConstants.EventKeys.userVariables] as? [String: Any]
+                    fullstoryInstance.identifyUser(id: uid, data: userData)
+                case .setUserVariables:
+                    guard let userData = payload[FullstoryConstants.EventKeys.userVariables] as? [String: Any] else {
+                        return
+                    }
+                    fullstoryInstance.setUserData(data: userData)
+                case .logEvent:
+                    guard let eventName = payload[FullstoryConstants.EventKeys.eventName] as? String else {
+                        return
+                    }
+                    let eventData = payload[FullstoryConstants.EventKeys.eventProperties] as? [String: Any] ?? [:]
+                    fullstoryInstance.logEvent(eventName: eventName, eventData: eventData)
+                case .shutdown:
+                    fullstoryInstance.shutdown()
+                case .restart:
+                    fullstoryInstance.restart()
+                case .consent:
+                    guard let allowed = payload[FullstoryConstants.EventKeys.consentGranted] as? Bool else {
+                        return
+                    }
+                    fullstoryInstance.consent(allowed: allowed)
+                case .anonymize:
+                    fullstoryInstance.anonymize()
+                case .resetIdleTimer:
+                    fullstoryInstance.resetIdleTimer()
+                case .log:
+                    guard let message = payload[FullstoryConstants.EventKeys.logMessage] as? String,
+                          let levelString = payload[FullstoryConstants.EventKeys.logLevel] as? String,
+                          let level = FSEventLogLevel(levelString) else {
+                        return
+                    }
+                    fullstoryInstance.log(level: level, message: message)
                 }
-                let userData = payload[FullstoryConstants.EventKeys.userVariables] as? [String: Any]
-                fullstoryInstance.identifyUser(id: uid, data: userData)
-            case FullstoryConstants.Commands.setUserVariables:
-                guard let userData = payload[FullstoryConstants.EventKeys.userVariables] as? [String: Any] else {
-                    break
-                }
-                fullstoryInstance.setUserData(data: userData)
-            case FullstoryConstants.Commands.logEvent:
-                guard let eventName = payload[FullstoryConstants.EventKeys.eventName] as? String else {
-                    break
-                }
-                let eventData: [String: Any] = payload[FullstoryConstants.EventKeys.eventProperties] as? [String: Any] ?? [:]
-                fullstoryInstance.logEvent(eventName: eventName, eventData: eventData)
-            default:
-                break
             }
-        }
     }
 }
