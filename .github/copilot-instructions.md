@@ -65,23 +65,18 @@ commands.forEach { switch $0 { ... } }
 
 **Silent skip on missing required key** — when a required payload key is absent, skip this command silently. Never call the vendor SDK with a nil/default value as a substitute.
 
-The correct keyword depends on context:
-- Inside a `switch` case (Pattern A): use `break` to exit the case.
-- Inside a `forEach` closure (Pattern B): use `return` to exit the current iteration.
+Inside the `forEach` closure, use `return` to exit the current iteration (not `break`):
 
 ```swift
 // Wrong — calls vendor with empty string
 let uid = payload["uid"] as? String ?? ""
 instance.identify(uid)
 
-// Correct (Pattern A — guard inside switch case)
-case Commands.identify:
-    guard let uid = payload["uid"] as? String else { break }
-    instance.identifyUser(id: uid)
-
-// Correct (Pattern B — guard inside forEach closure)
+// Correct — guard + return skips this command
 case .identify:
-    guard let uid = payload["uid"] as? String else { return }
+    guard let uid = payload["uid"] as? String else { 
+        return 
+    }
     instance.identifyUser(id: uid)
 ```
 

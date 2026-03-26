@@ -3,7 +3,8 @@
 # A script to verify that the repo is up to date and the versions are correct and then runs the pod trunk push command
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "${SCRIPT_DIR}/scripts/validate_versions.sh"
+REPO_ROOT="${SCRIPT_DIR}/.."
+source "${SCRIPT_DIR}/validate_versions.sh"
 
 versionConstant="$(get_version)"
 echo "Version: $versionConstant"
